@@ -42,11 +42,11 @@ function changeLang() {
     if (lang == 'en') {
         
         // console.log('http://127.0.0.1:8000/' + href.substring(4));
-        location.replace('http://192.168.3.18:8000/' + href.substring(4));
+        location.replace('http://remnevivan.site/' + href.substring(4));
     }else{
 
         // console.log('http://127.0.0.1:8000/en' + href);
-        location.replace('http://192.168.3.18:8000/en' + href);
+        location.replace('http://remnevivan.site/en' + href);
     }
 }
 
