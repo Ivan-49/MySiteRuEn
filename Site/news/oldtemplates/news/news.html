@@ -1,0 +1,61 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>{{ instance.title }}</h1>
+    <p>{{ instance.text }}</p>
+    <p>{{ instance.description }}</p>
+
+
+
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Go">
+    </form>
+
+
+    <div class="card">
+        <h3 class="card-title">{% trans "Tempalte title" %}</h3>
+        <h3 class="card-title">{% trans "Tempalte ivan" %}</h3>
+        <p class = "card_discription">{% trans "Tempalte text" %}</p>
+    </div>
+    <script src="{% url 'javascript_catalog' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+
+</body>
+</html>
+
+
+
+
+  <!-- <li><a href="{% url 'main' %}" key = 'home'>Home</a></li>
+            <li><a href="{% url 'about' %}" key="about">About</a></li>
+            <li><a href="{% url 'portfolio' %}" key="portfolio">Portfolio</a></li>
+            <li><a href="{% url 'contact' %}" key="contact">Contact</a></li>
+            <li><a href="{% url 'resume' %}" key="resume">Resume</a></li> -->
+
+
+
+<a href="{% url 'about' %}"><button class="glow-on-hover" type="button">About me</button></a>

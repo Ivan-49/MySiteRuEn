@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block discription %}
+
+On this page you can find all my social networks and other contacts that you can use to contact me.
+
+{% endblock %}
+
+{% block content %}
+
+<div class="contacts">
+    <a target="_blank" href="https://github.com/Ivan-49">
+        <li class="contact GITHUB glow-on-hover">
+            
+                <img class="QR" src="{% static 'main/img/QR/GITHUB_QR.png' %}"> 
+                <h2>
+                    GITHUB
+                    <img class="icon_cont" src="{% static 'main/img/icons/github.png' %}" alt="">
+                </h2>
+            
+        </li>
+    </a>
+    <a target="_blank" href="https://t.me/IvanRemnev2007">
+        <li class="contact TELEGRAM glow-on-hover" >
+            <div>
+                <img class="QR" src="{% static 'main/img/QR/TG_QR.png' %}"> 
+                <h2>
+                    TELEGRAM
+                    <img class="icon_cont" src="{% static 'main/img/icons/tg.png' %}" alt="">
+
+                </h2>
+            </div>
+        </li>
+    </a>
+    <a target="_blank" href="https://vk.com/uuyy_uuyy">
+        <li class="contact VK glow-on-hover">
+            <div>
+                <img class="QR" src="{% static 'main/img/QR/VK_QR.png' %}"> 
+                <h2>
+                    VK
+                    <img class="icon_cont" src="{% static 'main/img/icons/vk.png' %}" alt="">
+                </h2>
+            </div>
+        </li>
+    </a>
+    <a target="_blank" href="https://www.instagram.com/ivan49_331?igsh=MWJucmxjMDV4bjFhYQ==">
+        <li class="contact INST glow-on-hover">
+            <div>
+                <img class="QR" src="{% static 'main/img/QR/INST_QR.png' %}"> 
+                <h2>
+                    <!-- instagram -->
+                    INSTAGRAM
+                    <img class="icon_cont" src="{% static 'main/img/icons/insta.png' %}" alt="">
+
+                </h2>
+            </div>
+        </li>
+        </a>
+        <li class="contact PHONE glow-on-hover">
+            <div>
+                <img class="QR" src="{% static 'main/img/QR/PH_NUM_QR.png' %}"> 
+                <h2>
+                    (+79049587972)
+                    <img class="icon_cont" src="{% static 'main/img/icons/phone.png' %}" alt="">
+
+                </h2>
+            </div>
+        </li>
+    
+    <a target="_blank" href="mailto:remnevvanya@yandex.ru">
+        <li class="contact EMAIL glow-on-hover">
+            <div>
+                <img class="QR" src="{% static 'main/img/QR/EMAIL_QR.png' %}"> 
+                <h2>
+                    EMAIL
+                    <img class="icon_cont" src="{% static 'main/img/icons/email.png' %}" alt="">
+
+                </h2>
+            </div>
+        </li>
+    </a>
+</div>
+
+{% endblock %}

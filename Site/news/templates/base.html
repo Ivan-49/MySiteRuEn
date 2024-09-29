@@ -1,0 +1,73 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" type="text/css">
+    <link rel="icon" href="{%static 'main/img/icons/favicon.ico' %}" type="image/x-icon">
+    <title>{{ instance.title }}</title>
+    
+</head>
+<body>
+
+    <header>
+        <ul class="header">
+          
+            <!-- <li> <button id = 'button'>en/ru</button></li> -->
+            {% for title in head %}
+                <li><a target="_self" class = "header_a" id="{{title.url}}">{{title}}</a></li>
+            {%endfor%}
+                <li></li>
+            <button class="lang_button" id = 'lang_button'></button>
+
+            <hr width="50%"/>
+
+
+        </ul>
+        
+    </header>
+    <main>
+        <div class="start">
+            <div class ="main">
+                <h1>{{ instance.title }}</h1>
+                
+                <div class="discription">
+                    {% if instance.description != None %}
+                        {{ instance.description }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <span class="photo">
+                {% block photo %}{% endblock %}
+            </span>    
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+            <pre>
+                {% if instance.text != None %}
+                    {{instance.text}}
+                {% endif %}
+            </pre>  
+            
+        
+        </div>
+
+        
+        <span class="button">
+            
+
+            {% block button %}{% endblock %}
+
+        </span>
+
+    </main>
+
+</body>
+<!-- <script src="{% static 'main/js/jquery.js' %}"></script> -->
+<script src="{% static 'main/js/main.js' %}"></script>
+
+</html>
