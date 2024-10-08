@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Article
 # from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
@@ -28,3 +28,7 @@ def article_detail(request, slug):
         return render(request, f'main/{instance.url}.html', context)
     except:
         return render(request, 'main/home.html', context)
+
+
+def redirect_home(request):
+    return redirect('/home/')
