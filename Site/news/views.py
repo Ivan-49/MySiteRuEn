@@ -24,8 +24,6 @@ def article_detail(request, slug):
             'img':img
         }
         
-        print(f'instance url = {instance.url}')
-        print(f'main/{instance.url}.html')
         
         try:
             return render(request, f'main/{instance.url}.html', context)
