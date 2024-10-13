@@ -10,8 +10,7 @@ def article_detail(request, slug):
     if slug in [i.slug for i in head]:
         instance = get_object_or_404(Article, slug=slug)
         
-        for i in head:
-            print(i.title)
+      
 
         if request.path in '/en/home/':
             img = True
