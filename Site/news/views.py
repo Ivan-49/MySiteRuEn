@@ -6,12 +6,8 @@ from .models import Article
 def article_detail(request, slug):
     global head 
     head = Article.objects.all()
-    
     if slug in [i.slug for i in head]:
         instance = get_object_or_404(Article, slug=slug)
-        
-      
-
         if request.path in '/en/home/':
             img = True
         else:
@@ -23,7 +19,6 @@ def article_detail(request, slug):
             'img':img
         }
         
-        
         try:
             return render(request, f'main/{instance.url}.html', context)
         except:
@@ -31,8 +26,10 @@ def article_detail(request, slug):
     else:
         return redirect('/about/')
 
+
 def redirect_home(request):
     return redirect('/home/')
+
 
 def custom_404(request, string):
     return redirect('/home/')
